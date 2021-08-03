@@ -47,3 +47,23 @@ function getWeather() {
       alert("Invalid town, city or country. Please try again.");
     });
 }
+
+function UVIndex(longitude,latitude){
+ 
+  var queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude + "&lon=" + longitude +"&units=imperial&appid=" + APIKey 
+  
+    fetch(queryURL)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      uvIndexDisplay.textContent = data.current.uvi
+
+      if(data.current.uvi <= 2){
+        uvIndexDisplay.style.color = "darkgreen"
+      } else if (data.current.uvi >= 8){
+        uvIndexDisplay.style.color = "red"
+      } else (uvIndexDisplay.style.color = "orange")
+
+      
+})}
