@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+</head>
+<body>
+  <div class="bg-image" style=" background-image: url(./assets/images/weather.jpg); background-size: cover;">
+    <div class="container" style="margin-right:200px; margin-bottom: 40px;">
+        <h1 class="display-4"  style="font-size: 60px; font-weight: 100;">Weather Dashboard</h1>
+        <p class="lead"  style="font-weight: 100;">A weather application to check the weather.</p>
+        <p id="p2" class="lead"  style="font-weight: 100;"> Any time. Any day. Anywhere.</p>
+    </div>
+    <div class="row justify-content-center searchbar" style="margin: 0px;">
+        <div class="col-6 form" style="color: white; padding:0px 25px 5px 25px; background-color:rgba(253, 253, 253, 0.85) ">
+        <div class="form-group search-div">
+            <p class="label" style="font-size: 25px; font-weight: 200; color: black; padding: 15px;">Search for a town, city or country:</p>
+            <input type="text" class="form-control input-value" id="locationSearch" aria-describedby="searchLocation" placeholder="Enter a location here">
+            <button type="submit" class="btn btn-primary" id="searchbutton"  style="background-color: rgb(66, 144, 180); border: none; font-size: 20px; font-weight: 100; margin: 20px 0px 10px 0px">Search</button>
+      <ul class="pastsearches" style="color: gray; text-align: center;">
+
+      </ul>
+        </div>
+    </div>
+    </div>
+    <div class="card" style="padding:10px; margin:50px 200px 20px 200px ; background-color:rgba(81, 185, 226, 0.85);;">
+        <div class="card-header todays-date" style="color:white; font-weight:100; font-size: 20px; align-items: center;"> Date: </div>
+        <div class="card-body todays-weather">
+          <h5 class="card-title location" style="color:white; font-weight:300; font-size: 35px;"></h5>
+          <img  id="todays-icon" src="" alt="">
+          <p class="card-text" style="color:white; font-weight:100; font-size: 20px;">Temperature:<span class="temp"> </span></p>
+          <p class="card-text" style="color:white; font-weight:100; font-size: 20px;">Wind: <span class="wind"> </span></p>
+          <p class="card-text" style="color:white; font-weight:100; font-size: 20px;">Humidity: <span class="humidity"> </span></p>
+          <p class="card-text" style="color:white; font-weight:100; font-size: 20px;">UV Index: <span class="uv-index"> </span></p>
+        </div>
+    </div>
+    <p class="lead"  style="font-weight: 300; font-size: 40px; color:white; margin-left:30px; margin-top:30px; padding:10px; text-align: center;">Five Day Forecast:</p>
+    <div class="row justify-content-center" style="padding-bottom:40px; margin:0px">
+        <div class="card" style="padding: 7px; margin: 10px; background-color:rgba(81, 185, 226, 0.85);">
+            <div class="card-header" id="forecastDate1" style="color:white; font-weight:100; font-size: 20px;"> Date: </div>
+            <div class="card-body">
+            <img  id="weatherIconFor1" src="" alt="">
+            <p class="card-text"  style="color:white; font-weight:100; font-size: 15px;">Temperature: <span id="forecastTemp1"></span> </p>
+            <p class="card-text" style="color:white; font-weight:100; font-size: 15px;">Wind: <span id="forecastWind1"></span></p>
+            <p class="card-text" style="color:white; font-weight:100; font-size: 15px;">Humidity: <span id="forecastHumidity1"></span></p>
+            </div>    
+        </div>
+        <div class="card" style="padding: 7px; margin:10px; background-color:rgba(81, 185, 226, 0.85);">
+            <div class="card-header"  id="forecastDate2" style="color:white; font-weight:100; font-size: 20px;"> Date: </div>
+            <div class="card-body">
+            <img id="weatherIconFor2" src="" alt="">
+            <p class="card-text"  style="color:white; font-weight:100; font-size: 15px;">Temperature: <span id="forecastTemp2"></span></p>
+            <p class="card-text windFor" style="color:white; font-weight:100; font-size: 15px;">Wind: <span id="forecastWind2"></span></p>
+            <p class="card-text humidityFor" style="color:white; font-weight:100; font-size: 15px;">Humidity: <span id="forecastHumidity2"></span></p>
+            </div>    
+        </div>
+        <div class="card" style="padding: 7px; margin:10px; background-color:rgba(81, 185, 226, 0.85);">
+            <div class="card-header" id="forecastDate3" style="color:white; font-weight:100; font-size: 20px;"> Date: </div>
+            <div class="card-body">
+            <img id="weatherIconFor3" src="" alt="">
+            <p class="card-text"  style="color:white; font-weight:100; font-size: 15px;">Temperature: <span id="forecastTemp3"></span></p>
+            <p class="card-text" style="color:white; font-weight:100; font-size: 15px;">Wind: <span id="forecastWind3"></span></p>
+            <p class="card-text" style="color:white; font-weight:100; font-size: 15px;">Humidity: <span id="forecastHumidity3"></span></p>
+            </div>    
+        </div>
+        <div class="card" style="padding: 7px; margin:10px; background-color:rgba(81, 185, 226, 0.85);">
+            <div class="card-header" id="forecastDate4" style="color:white; font-weight:100; font-size: 20px;"> Date: </div>
+            <div class="card-body">
+            <img id="weatherIconFor4" src="" alt="">
+            <p class="card-text" style="color:white; font-weight:100; font-size: 15px;">Temperature: <span id="forecastTemp4" ></span></p>
+            <p class="card-text" style="color:white; font-weight:100; font-size: 15px;">Wind: <span id="forecastWind4"></span></p>
+            <p class="card-text" style="color:white; font-weight:100; font-size: 15px;">Humidity: <span id="forecastHumidity4"></span></p>
+            </div>    
+        </div>
+        <div class="card" style="padding: 7px; margin:10px; background-color:rgba(81, 185, 226, 0.85);">
+            <div class="card-header" id="forecastDate5" style="color:white; font-weight:100; font-size: 20px;"> Date: </div>
+            <div class="card-body">
+            <img id="weatherIconFor5"  src="" alt="">
+            <p class="card-text" style="color:white; font-weight:100; font-size: 15px;">Temperature: <span id="forecastTemp5"></span></p>
+            <p class="card-text" style="color:white; font-weight:100; font-size: 15px;">Wind: <span id="forecastWind5"></span></p>
+            <p class="card-text" style="color:white; font-weight:100; font-size: 15px;">Humidity: <span id="forecastHumidity5"></span></p>
+            </div>    
+        </div>
+    </div>
+</div>
+</body>
+</html>
