@@ -161,3 +161,14 @@ function fiveDayForecast () {
     forIcon5.setAttribute("src", forecastIcons[4])
   }
 )}
+
+function clearField(){
+  var citySearch = document.querySelector("#locationSearch")
+  citySearch.value = ""
+}
+
+function saveInputs(){
+ localStorage.setItem('city', city.value)
+
+renderInputs()
+}
