@@ -172,3 +172,18 @@ function saveInputs(){
 
 renderInputs()
 }
+
+function renderInputs(){
+  var savedCities =[]
+  var cityHistory = localStorage.getItem("city")
+  savedCities.push(cityHistory)
+
+  console.log(savedCities)
+
+ for (i=0;i<savedCities.length;i++){
+
+  var listItem = document.createElement("li")
+  listItem.textContent = savedCities[i]
+  listEl.appendChild(listItem)
+ }
+}
